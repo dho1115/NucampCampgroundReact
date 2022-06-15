@@ -1,6 +1,8 @@
-import React from 'react'
+import React from 'react';
+import { Card, CardBody, CardImg, CardText, Col } from 'reactstrap';
 
-function CampsiteDetail(props) {
+
+function CampsiteDetail({campsite}) {
     return (
         <div>
             
