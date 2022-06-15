@@ -1,9 +1,10 @@
 //import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import CampsitesList from './features/Campsites/CampsitesList';
+// import CampsitesList from './features/Campsites/CampsitesList';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+import CampsitesDirectoryPage from './Pages/CampsitesDirectoryPage';
 
 
 
@@ -12,7 +13,7 @@ function App() {
     <div className="App">
       <div>
         <Header />
-        <CampsitesList />
+        <CampsitesDirectoryPage />
         <Footer />
       </div>
     </div>
