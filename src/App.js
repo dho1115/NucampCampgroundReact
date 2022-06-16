@@ -6,8 +6,6 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import CampsitesDirectoryPage from './Pages/CampsitesDirectoryPage';
 
-
-
 function App() {
   return (
     <div className="App">
