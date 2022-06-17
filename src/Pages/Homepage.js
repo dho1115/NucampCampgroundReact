@@ -1,12 +1,17 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { Container, Row } from 'reactstrap'
+import DisplayList from '../features/Display/DisplayList'
 
 
 function Homepage() {
     return (
-        <div>
-            <h1>WELCOME TO THE HOMEPAGE!!!</h1>
-        </div>
+        <Container>
+            <Row className='text-center'>
+                <h1>WELCOME TO THE HOMEPAGE!!!</h1>
+            </Row>
+            <DisplayList />
+        </Container>
     )
 }
 
