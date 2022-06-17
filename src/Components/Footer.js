@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
 
 
@@ -8,7 +9,13 @@ function Footer() {
             <Container>
                 <Row>
                     <Col xs={{ size: 4, offset: 1 }} sm='2'>
-                        <h5>This is the Nucamp site.</h5>
+                        <h5>LINKS.</h5>
+                        <ul className='list-unstyled'>
+                            <li><Link to="/">HOME</Link></li>
+                            <li><Link to="/about">ABOUT</Link></li>
+                            <li><Link to="/directory">DIRECTORY</Link></li>
+                            <li><Link to="/contact">CONTACT</Link></li>
+                        </ul>
                     </Col>
                     <Col xs='6' sm='3' className='text-center'>
                         <h5>Social</h5>
