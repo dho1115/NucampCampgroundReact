@@ -9,6 +9,7 @@ import { Route, Routes } from 'react-router-dom';
 import Contactpage from './Pages/Contactpage';
 import Homepage from './Pages/Homepage';
 import CampsiteDetailPage from './Pages/CampsiteDetailPage';
+import AboutPage from './Pages/AboutPage';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path='contact' element={<Contactpage />} />
             <Route path='directory' element={<CampsitesDirectoryPage />} />
             <Route path='directory/:campsiteId' element={<CampsiteDetailPage />} />
+            <Route path="/aboutPage" element={<AboutPage />} />
           </Routes>
         <Footer />
       </div>

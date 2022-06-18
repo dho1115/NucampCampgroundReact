@@ -1,10 +1,12 @@
 import React from 'react'
 import { Card, CardBody, CardHeader, Col, Container, Row } from 'reactstrap'
+import SubHeader from '../Components/SubHeader'
 
 
 function AboutPage() {
     return (
         <Container>
+            <SubHeader current="About Us." />
             <Row className='row-content'>
                 <Col className='col-sm-6'>
                     <h3>Our Mission</h3>
