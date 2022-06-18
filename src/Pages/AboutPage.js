@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, CardBody, CardHeader, Col, Container, Row } from 'reactstrap'
 import SubHeader from '../Components/SubHeader'
+import PartnersList from '../features/Partners/PartnersList'
 
 
 function AboutPage() {
@@ -65,6 +66,7 @@ function AboutPage() {
                 <Col className='xs-12'>
                     <h3>Community Partners</h3>
                 </Col>
+                <PartnersList />
             </Row>
         </Container>
     )
