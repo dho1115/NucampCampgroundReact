@@ -3,6 +3,11 @@ import { Button, Col, FormGroup, Label } from 'reactstrap';
 import { Field, Form, Formik } from 'formik';
 
 function ContactForm() {
+
+    function handleSubmit(values) {
+
+    }
+
     return (
         <Formik
             initialValues={{
@@ -14,6 +19,8 @@ function ContactForm() {
                 contactType: 'By Phone',
                 feedback: ''
             }}
+
+            onSubmit={handleSubmit}
         >
             <Form>
                 <FormGroup row>
@@ -45,7 +52,15 @@ function ContactForm() {
                 </FormGroup>
 
                 <FormGroup row>
-                    <Label check md={{size: 4, offset: 2}}>May we contact you? </Label>
+                    <Label check md={{size: 4, offset: 2}}>
+                        <Field
+                            name='agree'
+                            type='checkbox'
+                            className='form-check-input'
+                        />
+                        {"   "}
+                        May we contact you? 
+                    </Label>
                     <Col md='4'>
                         <Field className='form-control' name='contactType' as='select'>
                             <option>By Phone.</option>
@@ -58,12 +73,14 @@ function ContactForm() {
                 <FormGroup row>
                     <Label htmlFor='feedback' md='2'>FEEDBACK.</Label>
                     <Col md='10'>
-                        <Field className='form-control' />
+                        <Field name='feedback' as='textarea' rows='15' className='form-control' />
                     </Col>
                 </FormGroup>
 
                 <FormGroup row>
-
+                    <Col md={{size: 10, offset: 2}}>
+                        <Button type='submit' color='danger'>PLEASE SEND FEEDBACK.</Button>
+                    </Col>
                 </FormGroup>
             </Form>
         </Formik>
