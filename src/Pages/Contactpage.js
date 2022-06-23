@@ -1,5 +1,6 @@
 import React from 'react'
 import { Col, Container, Row } from 'reactstrap'
+import ContactForm from '../Components/ContactForm'
 import SubHeader from '../Components/SubHeader'
 
 
@@ -35,7 +36,7 @@ function Contactpage() {
                     <hr />
                 </Col>
                 <Col md='10'>
-                    <p>TBD: Contact Form.</p>
+                    <ContactForm />
                 </Col>
             </Row>
         </Container>

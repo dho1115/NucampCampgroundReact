@@ -42,7 +42,7 @@ function ContactForm() {
                 </FormGroup>
             
                 <FormGroup row>
-                    <Label></Label>
+                    <Label htmlFor='feedback' md='2'>FEEDBACK.</Label>
                     <Col md='10'></Col>
                 </FormGroup>
 
