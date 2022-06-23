@@ -4,8 +4,18 @@ import { Field, Form, Formik } from 'formik';
 
 function ContactForm() {
 
-    function handleSubmit(values) {
+    const validationContactForm = values => {
+        const errors = {};
+        const reg = /^\d+$/;
 
+        if (!reg.test(values.phoneNum)) {
+            errors.phoneNum = "The phone number should be in numbers only!!!"
+        }
+    }
+
+    function handleSubmit(values, {resetForm}) {
+        console.log({values});
+        resetForm()
     }
 
     return (
@@ -21,6 +31,8 @@ function ContactForm() {
             }}
 
             onSubmit={handleSubmit}
+
+            validate={validationContactForm}
         >
             <Form>
                 <FormGroup row>
