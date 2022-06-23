@@ -20,7 +20,7 @@ function SubHeader({ current, detail }) {
                     }
                     <BreadcrumbItem active>{current}</BreadcrumbItem>
                 </Breadcrumb>
-                <h3>{current}</h3>
+                <h3 style={{fontFamily: 'impact', color: 'red'}}>{current}</h3>
                 <hr />
             </Col>
         </Row>

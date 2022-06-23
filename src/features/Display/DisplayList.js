@@ -3,7 +3,8 @@ import { Col, Row } from 'reactstrap'
 import { selectFeaturedCampsite } from '../Campsites/campsitesSlice'
 import { selectFeaturedPartners } from '../Partners/partnersSlice'
 import { selectFeaturedPromotion } from '../Promotions/PromotionsSlice'
-import DisplayCard from './DisplayCard'
+import AnimatedDisplayCard from './AnimatedDisplayCard'
+// import DisplayCard from './DisplayCard'
 
 
 function DisplayList() {
@@ -14,9 +15,9 @@ function DisplayList() {
             {
                 items.map((item, idx) => {
                     return(
-                        <Col md className='m-1' key={idx}>
-                            <DisplayCard item={item} />
-                        </Col>
+                        item && (<Col md className='m-1' key={idx}>
+                            <AnimatedDisplayCard item={item} />
+                        </Col>)
                     )
                 })
             }
