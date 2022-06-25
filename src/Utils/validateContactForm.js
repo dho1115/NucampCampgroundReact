@@ -16,4 +16,16 @@ export const validateContactForm = values => {
     } else if (values.lastName.length > 19) {
         errors.lastName = 'Last name cannot be greater than 19 characters!!!';
     }
+
+    const reg = /^\d+$/;
+
+    if (!reg.test(values.phoneNum)) {
+        errors.phoneNum = 'Phone number MUST be numbers only!!!';
+    }
+
+    if (!values.email.includes('@')) {
+        errors.email = 'Please include an @ in your email!!!';
+    }
+
+    return errors
 }

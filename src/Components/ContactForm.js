@@ -1,17 +1,10 @@
 import React from 'react';
-import { Button, Col, FormGroup, Label } from 'reactstrap';
-import { Field, Form, Formik } from 'formik';
+import { Button, Col, FormGroup, Label, Alert } from 'reactstrap';
+import { Field, Form, Formik, ErrorMessage } from 'formik';
+import { validateContactForm } from '../Utils/validateContactForm';
+
 
 function ContactForm() {
-
-    const validationContactForm = values => {
-        const errors = {};
-        const reg = /^\d+$/;
-
-        if (!reg.test(values.phoneNum)) {
-            errors.phoneNum = "The phone number should be in numbers only!!!"
-        }
-    }
 
     function handleSubmit(values, {resetForm}) {
         console.log({values});
@@ -32,13 +25,18 @@ function ContactForm() {
 
             onSubmit={handleSubmit}
 
-            validate={validationContactForm}
+            validate={validateContactForm}
         >
             <Form>
                 <FormGroup row>
                     <Label htmlFor='firstName' md='2'>FIRST NAME.</Label>
                     <Col md='10'>
                         <Field name="firstName" placeholder="First Name." className='form-control' />
+                        <ErrorMessage name='firstName'>
+                            {
+                                msg => <Alert color='danger'><h5>{msg}</h5></Alert>
+                            }
+                        </ErrorMessage>
                     </Col>
                 </FormGroup>
                 
@@ -46,6 +44,11 @@ function ContactForm() {
                     <Label htmlFor='lastName' md='2'>LAST NAME.</Label>
                     <Col md='10'>
                         <Field name="lastName" placeholder="Last Name." className='form-control' />
+                        <ErrorMessage name='lastName'>
+                            {
+                                msg => <Alert color='danger'><h5>{msg}</h5></Alert>
+                            }
+                        </ErrorMessage>
                     </Col>
                 </FormGroup>
 
@@ -53,6 +56,11 @@ function ContactForm() {
                     <Label htmlFor='phoneNum' md='2'>PHONE NUMBER.</Label>
                     <Col md='10'>
                         <Field name='phoneNum' placeholder='phone number here.' className='form-control' />
+                        <ErrorMessage name='phoneNum'>
+                        {
+                            msg => <Alert color='danger'><h5>{msg}</h5></Alert>
+                        }
+                    </ErrorMessage>
                     </Col>
                 </FormGroup>
 
@@ -60,6 +68,11 @@ function ContactForm() {
                     <Label htmlFor='email' md='2'>EMAIL.</Label>
                     <Col md='10'>
                         <Field type='email' name='email' placeholder='email address here.' className='form-control' />
+                        <ErrorMessage name='email'>
+                        {
+                            msg => <Alert color='danger'><h5>{msg}</h5></Alert>
+                        }
+                    </ErrorMessage>
                     </Col>
                 </FormGroup>
 
