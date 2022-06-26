@@ -1,6 +1,7 @@
 import React from 'react'
 import { Col } from 'reactstrap'
 import Comment from './Comment'
+import CommentForm from './CommentForm'
 import { selectCommentsByCampsiteId } from './commentsSlice'
 
 
@@ -18,6 +19,7 @@ function CommentsList({ campsiteId}) {
                         )
                     })
                 }
+                <CommentForm campsiteId={campsiteId} />
             </Col>
         )
     }

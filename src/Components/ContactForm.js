@@ -57,10 +57,10 @@ function ContactForm() {
                     <Col md='10'>
                         <Field name='phoneNum' placeholder='phone number here.' className='form-control' />
                         <ErrorMessage name='phoneNum'>
-                        {
-                            msg => <Alert color='danger'><h5>{msg}</h5></Alert>
-                        }
-                    </ErrorMessage>
+                            {
+                                msg => <Alert color='danger'><h5>{msg}</h5></Alert>
+                            }
+                        </ErrorMessage>
                     </Col>
                 </FormGroup>
 
@@ -69,10 +69,10 @@ function ContactForm() {
                     <Col md='10'>
                         <Field type='email' name='email' placeholder='email address here.' className='form-control' />
                         <ErrorMessage name='email'>
-                        {
-                            msg => <Alert color='danger'><h5>{msg}</h5></Alert>
-                        }
-                    </ErrorMessage>
+                            {
+                                msg => <Alert color='danger'><h5>{msg}</h5></Alert>
+                            }
+                        </ErrorMessage>
                     </Col>
                 </FormGroup>
 
