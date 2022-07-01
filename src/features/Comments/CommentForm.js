@@ -13,11 +13,16 @@ function CommentForm({ campsiteId} ) {
     const handleSubmit = (values) => {
         const comment = {
             campsiteId: parseInt(campsiteId),
-            rating: values.rating,
+            rating: values.rating, //The "values" comes from the argument in Formik.
             author: values.author,
-            text: values.commentText
+            text: values.commentText,
+            date: new Date(Date.now()).toISOString()
         };
-        console.log(comment);
+
+        dispatch(addComment(comment))
+        
+        console.log(addComment(comment))
+
         setModalOpen(false);
     }
 
