@@ -9,7 +9,7 @@ import asyncImg from '../assets/img/mount-promise.jpg';
 export const PROMOTIONS = [
     {
         id: 0,
-        name: 'Mountain Adventure',
+        name: 'Mountain Adventure *** FEATURED PROMO!!! ***',
         image: breadCrumbImg,
         featured: true,
         description:

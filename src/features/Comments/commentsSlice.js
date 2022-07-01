@@ -6,9 +6,18 @@ const initialState = { commentsArray: COMMENTS };
 
 const commentsSlice = createSlice({
     name: 'comments',
-    initialState
+    initialState,
+    reducers: {
+        addComment: (state, action) => {
+            console.log({ payload: action.payload, comments: state.comments });
+    
+            const newComment = { id: state.commentsArray.length + 1, ...action.payload }
+    
+            state.commentsArray.push(newComment); //We can do this mutation b/c of Immer.
+        }
+    }
 })
-
+export { addComment } = commentsSlice.actions; //Action creator.
 export const commentsReducer = commentsSlice.reducer;
 
 console.log({ commentsSlice })

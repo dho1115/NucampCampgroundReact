@@ -1,7 +1,9 @@
 import { Field, Formik, Form, ErrorMessage } from 'formik';
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
 import { Button, Modal, ModalBody, ModalHeader, Label, FormGroup } from 'reactstrap';
 import validateCommentForm from '../../Utils/validateCommentForm';
+import { addComment } from './commentsSlice';
 
 
 function CommentForm({ campsiteId} ) {

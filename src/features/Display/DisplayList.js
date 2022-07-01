@@ -14,7 +14,12 @@ function DisplayList() {
         return [selectFeaturedCampsite(state), selectFeaturedPromotion(state), selectFeaturedPartners(state)]
     } ) //state is the initialState inside campsitesSlice which is actually CAMPSITES.js.
 
-    console.log({ items })
+    const promotionsSelector = useSelector((state)=> {
+        // console.log({ state });
+        return state.promotions.promotionsArray.find(val => val.featured)
+    })
+
+    console.log({ promotionsSelector })
 
     return (
         <Row>

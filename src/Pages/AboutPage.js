@@ -5,6 +5,7 @@ import PartnersList from '../features/Partners/PartnersList'
 
 
 function AboutPage() {
+
     return (
         <Container>
             <SubHeader current="About Us." />
@@ -66,7 +67,7 @@ function AboutPage() {
                 <Col className='xs-12'>
                     <h3>Community Partners</h3>
                 </Col>
-                <PartnersList />
+                <PartnersList message={{ origin: 'AboutPage.js', message: 'Passed as prop from AboutPage.js to PartnersList component.' }} />
             </Row>
         </Container>
     )
