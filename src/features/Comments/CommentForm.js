@@ -8,6 +8,7 @@ import { addComment } from './commentsSlice';
 
 function CommentForm({ campsiteId} ) {
     const [modalOpen, setModalOpen] = useState(false);
+    const dispatch = useDispatch();
 
     const handleSubmit = (values) => {
         const comment = {
