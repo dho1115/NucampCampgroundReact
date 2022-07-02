@@ -20,7 +20,6 @@ function CommentForm({ campsiteId} ) {
         };
 
         dispatch(addComment(comment))
-        
         console.log(addComment(comment))
 
         setModalOpen(false);

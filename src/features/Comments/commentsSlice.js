@@ -18,6 +18,8 @@ const commentsSlice = createSlice({
     }
 })
 export const { addComment } = commentsSlice.actions; //Action creator.
+console.log({ addComment });
+
 export const commentsReducer = commentsSlice.reducer;
 
 console.log({ commentsSlice })

@@ -4,6 +4,7 @@ import { campsitesReducer } from '../features/Campsites/campsitesSlice';
 import { commentsReducer } from '../features/Comments/commentsSlice';
 import { partnersReducer } from '../features/Partners/partnersSlice';
 import { promotionsReducer } from '../features/Promotions/PromotionsSlice';
+import { userReducer } from '../features/User/userSlice';
 
 // import counterReducer from '../features/counter/counterSlice';
 
@@ -14,8 +15,10 @@ export const store = configureStore({
     campsites: campsitesReducer,
     comments: commentsReducer,
     partners: partnersReducer,
-    promotions: promotionsReducer
+    promotions: promotionsReducer,
+    user: userReducer
   },
+  
   middleware: getDefaultMiddleware => {
     return getDefaultMiddleware().concat([logger])
   }

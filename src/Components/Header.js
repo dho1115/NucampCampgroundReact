@@ -2,10 +2,10 @@ import React, {useState} from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem } from 'reactstrap'
 import NucampLogo from '../app/assets/logo.png'
+import UserLoginForm from '../features/User/UserLoginForm'
 
 
 function Header() {
-
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
@@ -39,6 +39,7 @@ function Header() {
                         </NavLink>
                     </NavItem>
                 </Nav>
+                <UserLoginForm />
             </Collapse>
         </Navbar>
     )
