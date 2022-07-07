@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardBody, CardImg, CardText, Col } from 'reactstrap';
-import { CAMPSITES } from '../../app/shared/CAMPSITES';
+// import { CAMPSITES } from '../../app/shared/CAMPSITES';
 
 
 function CampsiteDetail({campsite, campsiteId}) {

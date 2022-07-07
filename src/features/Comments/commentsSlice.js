@@ -9,7 +9,7 @@ const commentsSlice = createSlice({
     initialState,
     reducers: {
         addComment: (state, action) => {
-            console.log({ payload: action.payload, comments: state.comments });
+            // console.log({ payload: action.payload, comments: state.comments });
     
             const newComment = { id: state.commentsArray.length + 1, ...action.payload }
     
@@ -22,8 +22,8 @@ console.log({ addComment });
 
 export const commentsReducer = commentsSlice.reducer;
 
-console.log({ commentsSlice })
-console.log({ commentsReducer })
+// console.log({ commentsSlice })
+// console.log({ commentsReducer })
 
 export const selectCommentsByCampsiteId = (campsiteId) => {
     return state => state.comments.commentsArray.filter(comment => comment.campsiteId === parseInt(campsiteId))
