@@ -8,7 +8,7 @@ const initialState = { promotionsArray: [], isLoading: true, errMsg: '' };
 export const fetchPromotions = createAsyncThunk(
     'promotions/fetchPromotions',
     async () => {
-        const response = await fetch(baseURL + 'promtions');
+        const response = await fetch(baseURL + 'promotions');
         if (!response.ok) {
             return Promise.reject('Fetch promotions failed. Status code ' + response.status + '.');
         }
@@ -39,7 +39,11 @@ const promotionsSlice = createSlice({
 
 export const promotionsReducer = promotionsSlice.reducer;
 
-export const selectFeaturedPromotion = state => state.promotions.promotionsArray.find(({featured}) => featured)
+export const selectFeaturedPromotion = state => ({
+    featuredItem: state.promotions.promotionsArray.find(({featured}) => featured),
+    isLoading: state.promotions.isLoading,
+    errMsg: state.promotions.errMsg
+})
 
 //export const selectFeaturedPromotionII = PROMOTIONS.find(({featured}) => featured)
 

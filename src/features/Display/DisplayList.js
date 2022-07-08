@@ -1,6 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Col, Row } from 'reactstrap'
+import Error from '../../Components/Error'
+import Loading from '../../Components/Loading'
 import { selectFeaturedCampsite } from '../Campsites/campsitesSlice'
 import { selectFeaturedPartners } from '../Partners/partnersSlice'
 import { selectFeaturedPromotion } from '../Promotions/PromotionsSlice'
@@ -25,10 +27,20 @@ function DisplayList() {
         <Row>
             {
                 items.map((item, idx) => {
+                    const { isLoading, errMsg, featuredItem } = item;
+
+                    if (isLoading) {
+                        return <Loading key={ idx } />
+                    }
+
+                    if (errMsg) {
+                        return <Error errMsg={errMsg} />
+                    }
                     return(
-                        item && (<Col md className='m-1' key={idx}>
-                            <AnimatedDisplayCard item={item} />
-                        </Col>)
+                        featuredItem && 
+                        <Col md className='m-1' key={idx}>
+                            <AnimatedDisplayCard item={featuredItem} />
+                        </Col>
                     )
                 })
             }

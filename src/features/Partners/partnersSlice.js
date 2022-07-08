@@ -36,4 +36,10 @@ console.log({ partnersSlice });
 
 export const partnersReducer = partnersSlice.reducer;
 export const selectAllPartners = (state) => state.partners.partnersArray;
-export const selectFeaturedPartners = (state) => state.partners.partnersArray.find(({featured}) => featured)
+export const selectFeaturedPartners = (state) => (
+    {
+        featuredItem: state.partners.partnersArray.find(({featured}) => featured),
+        isLoading: state.partners.isLoading,
+        errMsg: state.partners.errMsg
+    }
+)
