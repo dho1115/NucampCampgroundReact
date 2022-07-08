@@ -3,6 +3,9 @@ import { baseURL } from "../../app/shared/baseURL";
 import { mapImageURL } from "../../Utils/mapImageURL";
 // import { CAMPSITES } from "../../app/shared/oldData/CAMPSITES";
 
+
+const initialState = { campsitesArray: [], isLoading: true, errMsg: '' };
+
 export const fetchCampsites = createAsyncThunk(
     'campsites/fetchCampsites',
     async () => {
@@ -11,11 +14,11 @@ export const fetchCampsites = createAsyncThunk(
             return Promise.reject('Unable to fetch, status: ' + response.status);
         }
         const data = await response.json();
+        console.log({ data })
         return data;
     }
 )
 
-const initialState = { campsitesArray: [], isLoading: true, errMsg: '' };
 const campsitesSlice = createSlice({
     name: 'campsites',
     initialState,
@@ -39,9 +42,6 @@ const campsitesSlice = createSlice({
 export const campsitesReducer = campsitesSlice.reducer;
 
 export const selectAllCampsites = (state) => {
-    console.log({ state });
-    console.log({ state_dot_campsites: state.campsites});
-
     return state.campsites.campsitesArray
 }
 

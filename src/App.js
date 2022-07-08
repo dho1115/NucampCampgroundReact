@@ -13,6 +13,8 @@ import Homepage from './Pages/Homepage';
 import CampsiteDetailPage from './Pages/CampsiteDetailPage';
 import AboutPage from './Pages/AboutPage';
 import { fetchCampsites } from './features/Campsites/campsitesSlice';
+import { fetchPartners } from './features/Partners/partnersSlice';
+import { fetchPromotions } from './features/Promotions/PromotionsSlice';
 
 
 function App() {
@@ -20,6 +22,9 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchCampsites())
+    dispatch(fetchPartners())
+    dispatch(fetchPromotions())
+
     return () => {
       
     }
