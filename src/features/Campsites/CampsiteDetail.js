@@ -8,6 +8,7 @@ function CampsiteDetail({campsite, campsiteId}) {
     // const {image, name, description} = campsite
     console.log({campsite})
     const {image, name, description} = campsite
+    console.log({ image, name, description})
 
     return (
         <Col md='5' className='m-1'>

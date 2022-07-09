@@ -12,7 +12,9 @@ import Loading from '../Components/Loading'
 
 function CampsiteDetailPage() {
     const {campsiteId} = useParams();
-    // const campsite = useSelector((state, otherProps = campsiteId) => selectCampsiteById(otherProps));
+    const campsite = useSelector((state, otherProps = campsiteId) => selectCampsiteById(otherProps));
+
+    // const campsite = useSelector(selectCampsiteById(campsiteId))
 
     const isLoading = useSelector(state => state.campsites.isLoading);
     const errMsg = useSelector(state => state.campsites.errMsg);
@@ -20,9 +22,9 @@ function CampsiteDetailPage() {
     let content = null;
 
     if (isLoading) {
-        content = <isLoading />
+        content = <Loading />
     } else if (errMsg) {
-        content = <errMsg errMsg={errMsg} />
+        content = <Error errMsg={errMsg} />
     } else {
         content = (
             <>
@@ -31,10 +33,6 @@ function CampsiteDetailPage() {
             </>
         )
     }
-
-    const campsite = useSelector(selectCampsiteById(campsiteId));
-
-    console.log({ campsite })
 
     return (
         <Container>
