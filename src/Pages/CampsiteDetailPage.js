@@ -12,9 +12,10 @@ import Loading from '../Components/Loading'
 
 function CampsiteDetailPage() {
     const {campsiteId} = useParams();
-    const campsite = useSelector((state, otherProps = campsiteId) => selectCampsiteById(otherProps));
+    console.log({ campsiteId })
+    // const campsite = useSelector((state, otherProps = campsiteId) => selectCampsiteById(otherProps));
 
-    // const campsite = useSelector(selectCampsiteById(campsiteId))
+    const campsite = useSelector(selectCampsiteById(campsiteId))
 
     const isLoading = useSelector(state => state.campsites.isLoading);
     const errMsg = useSelector(state => state.campsites.errMsg);

@@ -55,6 +55,7 @@ export const selectCampsiteById = id => state => {
     return state.campsites.campsitesArray.find(campsite => campsite.id === parseInt(id))
 }
 
+console.log({ selectCampsiteById: selectCampsiteById(1) })
 export const selectFeaturedCampsite = (state) => {
     console.log({ state })
     return {
