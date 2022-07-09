@@ -15,6 +15,7 @@ import AboutPage from './Pages/AboutPage';
 import { fetchCampsites } from './features/Campsites/campsitesSlice';
 import { fetchPartners } from './features/Partners/partnersSlice';
 import { fetchPromotions } from './features/Promotions/PromotionsSlice';
+import { fetchComments } from './features/Comments/commentsSlice';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
     dispatch(fetchCampsites())
     dispatch(fetchPartners())
     dispatch(fetchPromotions())
+    dispatch(fetchComments())
 
     return () => {
       
